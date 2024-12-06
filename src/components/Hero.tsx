@@ -46,11 +46,12 @@ const Hero = () => {
               <div className="absolute pointer-events-[all] opacity-0 group-hover:opacity-100 pointer-events-none transform translate-y-[10px] scale-[.98] bottom-[75px] left-[-60px] shadow-md bg-white w-[250px] transition-all duration-400 ease-in-out rounded-md">
                 <div className="relative p-8">
                   <h5 className="mb-2 text-[#121820] text-lg font-bold leading-[140%]">
-                    Experts
+                    Notre Équipe
                   </h5>
                   <div className="w-6 h-0.5 bg-[#f57c00] mb-2"></div>
                   <p className="text-gray-600 text-[13px]">
-                    And here some amazing content. It is very engaging. Right?
+                    Une équipe de professionnels de haut niveau avec une
+                    expérience dans le domaine.
                   </p>
                 </div>
                 {/* Tooltip arrow */}
@@ -63,22 +64,26 @@ const Hero = () => {
                   <Plus className="w-6 h-6 text-white" />
                 </div>
                 <span className="ml-2 opacity-80 text-base font-bold custom-syne">
-                  Dedicated Team
+                  Une Équipe Dédiée
                 </span>
               </div>
             </div>
           </div>
+
+          {/* Updated Developers Section */}
           <div className="relative ml-auto flex items-center space-x-2 pointer-events-[all]">
             <div className="relative group pointer-events-[all]">
               {/* Tooltip content */}
               <div className="absolute pointer-events-[all] opacity-0 group-hover:opacity-100 pointer-events-none transform translate-y-[10px] scale-[.98] bottom-[75px] left-[-60px] shadow-md bg-white w-[250px] transition-all duration-400 ease-in-out rounded-md">
                 <div className="relative p-8">
                   <h5 className="mb-2 text-[#121820] text-lg font-bold leading-[140%]">
-                    Experts
+                    Solutions Technologiques
                   </h5>
                   <div className="w-6 h-0.5 bg-[#f57c00] mb-2"></div>
                   <p className="text-gray-600 text-[13px]">
-                    And here some amazing content. It is very engaging. Right?
+                    Protégez votre entreprise avec des solutions comme les
+                    logiciels personnalisés, conçues pour améliorer vos
+                    performances et votre sécurité.
                   </p>
                 </div>
                 {/* Tooltip arrow */}
@@ -91,22 +96,25 @@ const Hero = () => {
                   <Plus className="w-6 h-6 text-white" />
                 </div>
                 <span className="ml-2 opacity-80 text-base font-bold custom-syne">
-                  Developpers
+                  Développement Logiciel
                 </span>
               </div>
             </div>
           </div>
+
+          {/* Updated Designers Section */}
           <div className="relative ml-[30%] flex items-center space-x-2 pointer-events-[all]">
             <div className="relative group pointer-events-[all]">
               {/* Tooltip content */}
               <div className="absolute pointer-events-[all] opacity-0 group-hover:opacity-100 pointer-events-none transform translate-y-[10px] scale-[.98] bottom-[75px] left-[-60px] shadow-md bg-white w-[250px] transition-all duration-400 ease-in-out rounded-md">
                 <div className="relative p-8">
                   <h5 className="mb-2 text-[#121820] text-lg font-bold leading-[140%]">
-                    Experts
+                    Sécurité Avancée
                   </h5>
                   <div className="w-6 h-0.5 bg-[#f57c00] mb-2"></div>
                   <p className="text-gray-600 text-[13px]">
-                    And here some amazing content. It is very engaging. Right?
+                    Garantissez la sécurité de vos locaux avec nos caméras de
+                    surveillance et systèmes de contrôle d&apos;accès de pointe.
                   </p>
                 </div>
                 {/* Tooltip arrow */}
@@ -119,7 +127,7 @@ const Hero = () => {
                   <Plus className="w-6 h-6 text-white" />
                 </div>
                 <span className="ml-2 opacity-80 text-base font-bold custom-syne">
-                  Designers
+                  Contrôle & Surveillance
                 </span>
               </div>
             </div>

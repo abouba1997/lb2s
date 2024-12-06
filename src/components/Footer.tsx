@@ -4,7 +4,7 @@ import LOGO from "@/assets/logo/lb2s_logo_sans_font.png";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="pb-7 relative z-0 text-white">
+    <footer className="py-20 relative z-0 text-white">
       <div className="absolute bg-map bg-opacity-75 bg-contain bg-no-repeat bg-center z-0 w-full h-full inset-0"></div>
       <div className="relative flex flex-col xl:max-w-[1420px] px-8 xl:w-full mx-auto sm:px-6 lg:px-8 z-10">
         <div className="grid gap-8">
@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
               <img src={LOGO.src} alt="Logo" className="mr-2 h-40 w-40" />
             </div>
             <p className="text-gray-400 text-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat.
+              {
+                "Chez LB2S Technology Corp, nous nous engageons à accompagner les entreprises avec des solutions innovantes en IT et en sécurité. Notre expertise couvre le développement de logiciels de pointe, la cybersécurité avancée et des services technologiques sur mesure, conçus pour favoriser la croissance et l'efficacité. Avec un engagement envers la qualité, l'intégrité et la satisfaction de nos clients, nous aspirons à être votre partenaire de confiance dans la navigation du paysage numérique. Ensemble, construisons un avenir plus intelligent et plus sécurisé."
+              }
             </p>
           </div>
         </div>

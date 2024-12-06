@@ -162,3 +162,40 @@ body {
 .peel-slide.swiper-slide-active img {
   transform: scale(1.15);
 }
+
+.mil-image-frame:before,
+.mil-image-frame:after {
+  content: "";
+  background-image: radial-gradient(#121820 15%, transparent 16%);
+  background-size: 20px 20px;
+  position: absolute;
+  opacity: 0;
+  z-index: 20 !important;
+  transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+}
+
+.mil-image-frame:before {
+  transform: translateX(0);
+  width: 120px;
+  height: 40px;
+  top: 30px;
+  right: 0;
+}
+
+.mil-image-frame:after {
+  transform: translateY(0);
+  width: 60px;
+  height: 120px;
+  bottom: 0;
+  left: 30px;
+}
+
+.team-member:hover .mil-image-frame:before {
+  opacity: 1;
+  transform: translateX(40px);
+}
+
+.team-member:hover .mil-image-frame:after {
+  opacity: 1;
+  transform: translateY(20px);
+}

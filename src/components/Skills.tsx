@@ -8,13 +8,15 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: "Développement Logiciel", percentage: 65 },
+  { name: "Systèmes de Vidéosurveillance", percentage: 99 },
+  { name: "Contrôle d'Accès", percentage: 99 },
+  { name: "Consultation IT", percentage: 89 },
+  { name: "Développement Logiciel", percentage: 85 },
   { name: "Développement Web", percentage: 90 },
-  { name: "Design UX / UI", percentage: 50 },
   { name: "Développement d'Applications", percentage: 95 },
-  { name: "Internet des Objets (IoT)", percentage: 60 },
-  { name: "Intelligence Artificielle", percentage: 90 },
-  { name: "Blockchain", percentage: 80 },
+  { name: "Cybersécurité", percentage: 85 },
+  { name: "Déploiement de Réseaux", percentage: 80 },
+  { name: "Maintenance Informatique", percentage: 90 },
 ];
 
 const Skills = () => {

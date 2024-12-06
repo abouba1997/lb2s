@@ -14,6 +14,8 @@ const config: Config = {
         lb2ss: "url('/images/bg-lb2s-abricot.svg')",
         "gradient-to-180": "linear-gradient(180deg, #181e26, #121820)",
         map: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/map.png')",
+        "map-other":
+          "linear-gradient(rgba(18, 24, 32, 0.005), rgba(18, 24, 32, 0.005)), url('/images/map.png')",
       },
       colors: {
         background: "hsl(var(--background))",
@@ -81,10 +83,13 @@ const config: Config = {
           DEFAULT: "#34C9EB",
         },
         heather: {
-          DEFAULT: "##B4C1CD",
+          DEFAULT: "#B4C1CD",
         },
         madison: {
           DEFAULT: "#0C3464",
+        },
+        "default-text": {
+          DEFAULT: "#121820",
         },
       },
       borderRadius: {

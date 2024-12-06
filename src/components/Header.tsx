@@ -26,16 +26,12 @@ const menuItems: MenuItemType[] = [
         href: "/ceo-words",
       },
       {
-        name: "À Propos",
+        name: "Notre Présentation",
         href: "/about",
       },
       {
         name: "Notre Équipe",
         href: "/team",
-      },
-      {
-        name: "Carrières",
-        href: "/careers",
       },
     ],
   },
@@ -45,20 +41,28 @@ const menuItems: MenuItemType[] = [
     hasDropdown: true,
     dropdown: [
       {
-        name: "Sécurité Informatique",
+        name: "Électricité et sécurité incendie",
         href: "/services/security",
       },
       {
-        name: "Systèmes de Surveillance",
+        name: "Sécurité électronique ",
         href: "/services/surveillance",
       },
       {
-        name: "Service 3",
+        name: "Réseaux et télécommunications",
         href: "/services/service-3",
       },
       {
-        name: "Service 4",
+        name: "Développement Informatique",
         href: "/services/service-4",
+      },
+      {
+        name: "Climatisation et plomberie",
+        href: "/services/service-5",
+      },
+      {
+        name: "Gestion technique de bâtiment (GTB) ",
+        href: "/services/service-6",
       },
     ],
   },
@@ -109,7 +113,11 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-madison shadow-md" : "bg-transparent"
+        pathname === "/"
+          ? isScrolled
+            ? "bg-madison shadow-md"
+            : "bg-transparent"
+          : "bg-white text-black shadow-md"
       } max-[1200px]:bg-madison`}
     >
       <nav className="xl:max-w-[1420px] xl:w-full mx-auto px-8 h-24 py-5 flex items-center justify-between">
@@ -133,9 +141,7 @@ const Header = () => {
             >
               <Link
                 href={item?.href ?? "#"}
-                className={`flex items-center space-x-1 ${
-                  isScrolled ? "text-white" : "text-white"
-                } hover:text-abricot ${
+                className={`flex items-center space-x-1 hover:text-abricot ${
                   item.hasDropdown
                     ? "before:content-[''] before:absolute before:top-4 before:-right-3 before:w-2 before:h-2 before:rounded-full before:border-2 before:border-abricot before:transition-all before:duration-300"
                     : ""
@@ -144,7 +150,7 @@ const Header = () => {
                 <span>{item.name}</span>
               </Link>
               {item.dropdown && hoveredItem === item.name && (
-                <div className="absolute left-1/2 -translate-x-1/2 p-8 opacity-1 pointer-events-auto top-[56px] w-48 bg-white rounded-md shadow-lg z-10">
+                <div className="absolute left-1/2 -translate-x-1/2 p-8 opacity-1 pointer-events-auto top-[56px] w-64 bg-white rounded-md shadow-lg z-10">
                   {item.dropdown.map((subItem, index) =>
                     typeof subItem === "string" ? (
                       <span
@@ -168,11 +174,7 @@ const Header = () => {
             </div>
           ))}
         </div>
-        <button
-          className={`${
-            isScrolled ? "text-white" : "text-white"
-          } hover:text-abricot hidden min-[1200px]:flex`}
-        >
+        <button className={`hover:text-abricot hidden min-[1200px]:flex`}>
           <Search className="w-6 h-6" />
         </button>
       </nav>

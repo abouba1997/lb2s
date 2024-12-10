@@ -6,7 +6,6 @@ import React, { useState } from "react";
 import Image1 from "@/assets/images/lb2s_1.jpg";
 import { ArrowRight, SquareArrowLeft, SquareArrowRight } from "lucide-react";
 import Link from "next/link";
-// import { AnimatePresence, motion } from "framer-motion";
 
 type Project = {
   id: number;

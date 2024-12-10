@@ -239,6 +239,17 @@ const Header = () => {
               </li>
             ))}
           </ul>
+          <div className="flex min-[1200px]:hidden items-center justify-center space-x-4">
+            <button className={`hover:text-abricot`}>
+              <Search className="w-6 h-6 text-black" />
+            </button>
+            <Link
+              href="/quote"
+              className=" px-4 py-2 bg-abricot text-white rounded-md hover:bg-abricot/65 transition-[cubic-bezier(0.4, 0, 0.2, 1)] duration-500"
+            >
+              Demander un devis
+            </Link>
+          </div>
         </nav>
       </div>
     </header>

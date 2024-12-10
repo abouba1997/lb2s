@@ -22,7 +22,7 @@ const menuItems: MenuItemType[] = [
     hasDropdown: true,
     dropdown: [
       {
-        name: "Mot du Directeur",
+        name: "Mot du Président",
         href: "/ceo-words",
       },
       {
@@ -174,9 +174,17 @@ const Header = () => {
             </div>
           ))}
         </div>
-        <button className={`hover:text-abricot hidden min-[1200px]:flex`}>
-          <Search className="w-6 h-6" />
-        </button>
+        <div className="hidden min-[1200px]:flex items-center space-x-4">
+          <button className={`hover:text-abricot`}>
+            <Search className="w-6 h-6" />
+          </button>
+          <Link
+            href="/quote"
+            className=" px-4 py-2 bg-abricot text-white rounded-md hover:bg-abricot/65 transition-[cubic-bezier(0.4, 0, 0.2, 1)] duration-500"
+          >
+            Demander un devis
+          </Link>
+        </div>
       </nav>
       <div className="relative h-full bg-white">
         <nav

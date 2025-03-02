@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Footer from "./Footer";
 
 const ContactForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -11,10 +10,10 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-gradient-to-180 pt-32 relative z-0">
+    <div className="pt-32 relative z-0">
       <div className="absolute bg-lb2ss bg-contain bg-no-repeat bg-center z-30 w-56 h-36 top-0 right-[20%]"></div>
       <div className="relative flex flex-col xl:max-w-[1420px] px-8 xl:w-full mx-auto sm:px-6 lg:px-8 z-10 mb-[100px]">
-        <h1 className="text-4xl capitalize font-bold text-white mb-16 leading-[140%]">
+        <h1 className="text-4xl capitalize font-bold mb-16 leading-[140%]">
           Contactez <span className="text-abricot">Nous</span>
         </h1>
         <form onSubmit={handleSubmit} className="bg-transparent">
@@ -27,7 +26,7 @@ const ContactForm: React.FC = () => {
                 <input
                   type="text"
                   placeholder="Entrez votre nom et prenom"
-                  className="p-3 bg-gray-700 rounded-md text-white"
+                  className="p-3 rounded-md border"
                   required
                 />
               </div>
@@ -38,7 +37,7 @@ const ContactForm: React.FC = () => {
                 <input
                   type="email"
                   placeholder="Votre addresse email"
-                  className="p-3 bg-gray-700 rounded-md text-white"
+                  className="p-3 rounded-md border"
                   required
                 />
               </div>
@@ -49,7 +48,7 @@ const ContactForm: React.FC = () => {
                 <input
                   type="tel"
                   placeholder="Votre numero de telephone"
-                  className="p-3 bg-gray-700 rounded-md w-full text-white"
+                  className="p-3 rounded-md border w-full"
                 />
               </div>
             </div>
@@ -60,7 +59,7 @@ const ContactForm: React.FC = () => {
                 </label>
                 <textarea
                   placeholder="Message"
-                  className="p-3 bg-gray-700 rounded-md text-white w-full h-full"
+                  className="p-3 rounded-md border w-full h-full"
                   required
                 ></textarea>
               </div>
@@ -74,7 +73,6 @@ const ContactForm: React.FC = () => {
           </button>
         </form>
       </div>
-      <Footer />
     </div>
   );
 };

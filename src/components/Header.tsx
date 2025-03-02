@@ -41,54 +41,52 @@ const menuItems: MenuItemType[] = [
     hasDropdown: true,
     dropdown: [
       {
-        name: "Électricité et sécurité incendie",
+        name: "Sécurité incendie",
         href: "/services/security",
       },
       {
-        name: "Sécurité électronique ",
-        href: "/services/surveillance",
+        name: "Électricité",
+        href: "/services/electricity",
       },
       {
-        name: "Réseaux et télécommunications",
-        href: "/services/service-3",
+        name: "Vidéosurveillance",
+        href: "/services/videosurveillance",
       },
       {
-        name: "Développement Informatique",
-        href: "/services/service-4",
+        name: "Contrôle d'Accès",
+        href: "/services/access-control",
       },
       {
-        name: "Climatisation et plomberie",
-        href: "/services/service-5",
+        name: "Systèmes d'Alarmes & Intrusions",
+        href: "/services/alarm-systems",
       },
       {
-        name: "Gestion technique de bâtiment (GTB) ",
-        href: "/services/service-6",
+        name: "Détection Métaux & Rayon X",
+        href: "/services/metal-detection",
+      },
+      {
+        name: "Infrastructure Réseau & Câblage",
+        href: "/services/infrastructure-networking",
+      },
+      {
+        name: "Solutions Wi-Fi & Internet",
+        href: "/services/wifi-internet",
+      },
+      {
+        name: "Téléphonie IP & VoIP",
+        href: "/services/ip-telephony",
+      },
+      {
+        name: "Sécurité Réseau & Cybersécurité",
+        href: "/services/network-security",
+      },
+      {
+        name: "Développement Web et Mobile",
+        href: "/services/web-mobile-development",
       },
     ],
   },
-  {
-    name: "Solutions",
-    hasDropdown: true,
-    dropdown: [
-      {
-        name: "Solutions 1",
-        href: "/solutions/solution-1",
-      },
-      {
-        name: "Solutions 2",
-        href: "/solutions/solution-2",
-      },
-      {
-        name: "Solutions 3",
-        href: "/solutions/solution-3",
-      },
-      {
-        name: "Solutions 4",
-        href: "/solutions/solution-4",
-      },
-    ],
-  },
-  { name: "Contactez-nous" },
+  { name: "Contactez-nous", href: "/contact" },
 ] as const;
 
 const Header = () => {
@@ -96,7 +94,6 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const pathname = usePathname();
-  console.log(pathname);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -109,6 +106,31 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const isActive = (itemHref: string) => {
+    if (itemHref === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === itemHref;
+  };
+
+  const isMainLinkActive = (item: MenuItemType) => {
+    if (item.href === "/") {
+      return pathname === "/";
+    }
+
+    if (item.dropdown) {
+      return item.dropdown.some(
+        (subItem) =>
+          typeof subItem !== "string" &&
+          subItem.href &&
+          pathname?.startsWith(subItem.href)
+      );
+    }
+
+    return false;
+  };
 
   return (
     <header
@@ -145,6 +167,8 @@ const Header = () => {
                   item.hasDropdown
                     ? "before:content-[''] before:absolute before:top-4 before:-right-3 before:w-2 before:h-2 before:rounded-full before:border-2 before:border-abricot before:transition-all before:duration-300"
                     : ""
+                } ${isActive(item.href || "") ? "text-abricot" : ""} ${
+                  isMainLinkActive(item) ? "text-abricot" : ""
                 }`}
               >
                 <span>{item.name}</span>
@@ -163,7 +187,9 @@ const Header = () => {
                       <Link
                         key={`dropdown-${index}`}
                         href={subItem.href || "#"}
-                        className="flex text-[#121820] justify-center items-center last:mb-0 text-center hover:text-abricot transition-[cubic-bezier(0.4, 0, 0.2, 1)] duration-500 mb-4 text-base w-full custom-syne"
+                        className={`flex text-[#121820] justify-center items-center last:mb-0 text-center hover:text-abricot transition-[cubic-bezier(0.4, 0, 0.2, 1)] duration-500 mb-4 text-base w-full custom-syne ${
+                          isActive(subItem.href || "") ? "text-abricot" : ""
+                        }`}
                       >
                         {subItem.name}
                       </Link>
@@ -206,6 +232,8 @@ const Header = () => {
                     item.hasDropdown
                       ? "before:content-[''] before:absolute before:top-0 before:-right-3 before:w-2 before:h-2 before:rounded-full before:border-2 before:border-abricot before:transition-all before:duration-300"
                       : ""
+                  }  ${isActive(item.href || "") ? "text-abricot" : ""}  ${
+                    isMainLinkActive(item || "") ? "text-abricot" : ""
                   }`}
                 >
                   {item.name}

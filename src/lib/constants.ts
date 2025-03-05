@@ -18,7 +18,7 @@ export const caseStudies = [
     clientSatisfaction: 4.9,
     testimonial:
       "L2BS a transformé notre approche de la sécurité. Leur solution sur mesure nous a permis d'atteindre un niveau de protection inégalé tout en simplifiant nos opérations quotidiennes.",
-    image: "/images/case-studies/bank-security.jpg",
+    image: "/projects/systeme_de_securite_integre_pour_banque.webp",
   },
   {
     id: 2,
@@ -39,7 +39,8 @@ export const caseStudies = [
     clientSatisfaction: 4.8,
     testimonial:
       "Le réseau mis en place par L2BS a révolutionné notre environnement d'apprentissage. La connectivité stable et rapide a ouvert de nouvelles possibilités pour l'enseignement en ligne et la recherche.",
-    image: "/images/case-studies/university-wifi.jpg",
+    image:
+      "/projects/reseau_wifi_haute_performance_pour_campus_universitaire.webp",
   },
   {
     id: 3,
@@ -60,7 +61,8 @@ export const caseStudies = [
     clientSatisfaction: 4.7,
     testimonial:
       "L2BS a apporté l'intelligence à notre bâtiment. Leur système GTB nous permet de gérer notre centre commercial de manière plus efficace et durable, tout en offrant une expérience améliorée à nos visiteurs.",
-    image: "/images/case-studies/mall-bms.jpg",
+    image:
+      "/projects/systeme_de_gestion_technique_de_batiment_pour_centre_commercial.webp",
   },
   {
     id: 4,
@@ -81,7 +83,7 @@ export const caseStudies = [
     clientSatisfaction: 4.9,
     testimonial:
       "L'infrastructure mise en place par L2BS a transformé notre hôpital en un établissement véritablement intelligent. La fiabilité et les performances du réseau ont un impact direct sur la qualité des soins que nous pouvons offrir.",
-    image: "/images/case-studies/hospital-network.jpg",
+    image: "/projects/infrastructure_reseau_pour_hopital_intelligent.webp",
   },
   {
     id: 5,
@@ -102,7 +104,7 @@ export const caseStudies = [
     clientSatisfaction: 4.8,
     testimonial:
       "Le système de L2BS a transformé notre approche de la sécurité urbaine. Nous sommes maintenant capables de répondre proactivement aux incidents et d'améliorer significativement la qualité de vie de nos citoyens.",
-    image: "/images/case-studies/urban-surveillance.jpg",
+    image: "/projects/systeme_de_videosurveillance_urbaine_intelligente.webp",
   },
   {
     id: 6,
@@ -123,7 +125,7 @@ export const caseStudies = [
     clientSatisfaction: 4.9,
     testimonial:
       "La solution de L2BS a révolutionné notre sécurité aéroportuaire. Nous avons maintenant un contrôle sans précédent sur l'accès à nos zones sensibles, tout en offrant une expérience fluide à nos passagers.",
-    image: "/images/case-studies/airport-access.jpg",
+    image: "/projects/solution_de_controle_dacces_pour_aeroport.webp",
   },
   {
     id: 7,
@@ -144,6 +146,7 @@ export const caseStudies = [
     clientSatisfaction: 4.8,
     testimonial:
       "Grâce à L2BS, notre ville est entrée dans une nouvelle ère énergétique. Le smart grid a non seulement amélioré notre efficacité, mais a aussi ouvert la voie à de nombreuses initiatives de ville intelligente.",
-    image: "/images/case-studies/smart-grid.jpg",
+    image:
+      "/projects/modernisation_du_reseau_electrique_pour_ville_intelligente.webp",
   },
 ];

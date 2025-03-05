@@ -14,6 +14,7 @@ import Collaboration from "@/components/Collaboration";
 import Skills from "@/components/Skills";
 import Testimonials from "@/components/Testimonials";
 import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
 
 const MainPage = () => {
   const data = [
@@ -71,6 +72,7 @@ const MainPage = () => {
       </div>
       <Testimonials />
       <ContactForm />
+      <Footer />
     </>
   );
 };

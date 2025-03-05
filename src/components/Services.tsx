@@ -6,38 +6,19 @@ type ServiceCardProps = {
   number: string;
   title: string;
   description: string;
-  link: string;
+  href: string;
   icon: JSX.Element;
 };
-
-// const ServiceCard = ({
-//   number,
-//   title,
-//   description,
-//   icon,
-// }: ServiceCardProps) => (
-//   <div className="flex items-start justify-between space-x-4 p-8">
-//     <div className="flex items-center justify-center w-20 h-20 rounded-full">
-//       {icon}
-//     </div>
-//     <div>
-//       <h3 className="text-lg font-semibold text-abricot !mb-[30px]">
-//         {number} <span className="text-black">{title}</span>
-//       </h3>
-//       <p className="text-gray-500">{description}</p>
-//     </div>
-//   </div>
-// );
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
   number,
   title,
   description,
   icon,
-  link,
+  href,
 }) => (
   <Link
-    href={link}
+    href={href}
     style={{ transition: ".4s cubic-bezier(0, 0, .3642, 1)" }}
     className="mb-8 text-default-text bg-black/10 p-8 rounded-lg shadow-xl flex group hover:bg-black/5"
   >
@@ -68,64 +49,81 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
 const services = [
   {
-    title: "Électricité et sécurité incendie",
+    title: "Sécurité incendie",
     description:
-      "Fourniture et installation d'équipements de courant fort et faible, ainsi que de systèmes de sécurité incendie.",
-    icon: <Zap className="w-6 h-6 text-orange-500" />,
+      "Solutions avancées pour la prévention, la détection et la suppression des incendies, incluant alarmes et extincteurs automatiques.",
+    icon: <span className="text-2xl">🔥</span>,
+    href: "/services/security",
   },
   {
-    title: "Sécurité électronique",
+    title: "Électricité",
     description:
-      "Mise en place de systèmes de contrôle d'accès, vidéosurveillance, alarmes intrusion, et câblages de sécurité électronique.",
-    icon: <span className="text-2xl">🔒</span>,
+      "Installation et maintenance de réseaux électriques basse et haute tension, garantissant sécurité et performance énergétique.",
+    icon: <Zap className="w-6 h-6 text-yellow-500" />,
+    href: "/services/electricity",
   },
   {
-    title: "Équipements électromécaniques",
+    title: "Vidéosurveillance",
     description:
-      "Vente et installation d'ascenseurs, d'escalators et autres équipements électromécaniques.",
-    icon: <span className="text-2xl">⚙️</span>,
+      "Systèmes de vidéosurveillance intelligents avec caméras HD, enregistrement sécurisé et accès à distance.",
+    icon: <span className="text-2xl">🎥</span>,
+    href: "/services/videosurveillance",
   },
   {
-    title: "Réseaux et télécommunications",
+    title: "Contrôle d'Accès",
     description:
-      "Installation de réseaux informatiques, téléphoniques et systèmes de télécommunication.",
-    icon: <span className="text-2xl">🌐</span>,
+      "Solutions de contrôle d’accès pour sécuriser vos locaux : badges, biométrie, interphonie et gestion des visiteurs.",
+    icon: <span className="text-2xl">🔑</span>,
+    href: "/services/access-control",
   },
   {
-    title: "Énergies renouvelables",
+    title: "Systèmes d'Alarmes & Intrusions",
     description:
-      "Solutions clé en main pour l'installation de systèmes d'énergie solaire et autres technologies vertes.",
-    icon: <span className="text-2xl">☀️</span>,
+      "Installation d’alarmes anti-intrusion et détecteurs de mouvement pour une sécurité optimale.",
+    icon: <span className="text-2xl">🚨</span>,
+    href: "/services/alarm-systems",
   },
   {
-    title: "Climatisation et plomberie",
+    title: "Détection Métaux & Rayon X",
     description:
-      "Commercialisation et installation de systèmes de climatisation, ainsi que d'équipements de plomberie.",
-    icon: <span className="text-2xl">🚰</span>,
+      "Portiques de détection de métaux et scanners à rayons X pour le contrôle de sécurité dans les zones sensibles.",
+    icon: <span className="text-2xl">🛃</span>,
+    href: "/services/metal-detection",
   },
   {
-    title: "Gestion technique de bâtiment (GTB)",
+    title: "Infrastructure Réseau & Câblage",
     description:
-      "Automatisation des bâtiments et gestion intelligente de leurs infrastructures pour une efficacité optimale.",
-    icon: <span className="text-2xl">🏢</span>,
+      "Conception et installation d’infrastructures réseau performantes : câblage structuré, fibre optique et data centers.",
+    icon: <span className="text-2xl">🖧</span>,
+    href: "/services/infrastructure-networking",
   },
   {
-    title: "Développement de logiciels",
+    title: "Solutions Wi-Fi & Internet",
     description:
-      "Conception et développement de solutions logicielles sur mesure pour répondre aux besoins spécifiques de votre entreprise.",
+      "Déploiement de réseaux Wi-Fi sécurisés et solutions internet adaptées aux entreprises et collectivités.",
+    icon: <span className="text-2xl">📡</span>,
+    href: "/services/wifi-internet",
+  },
+  {
+    title: "Téléphonie IP & VoIP",
+    description:
+      "Mise en place de solutions VoIP et téléphonie IP pour une communication fluide et économique.",
+    icon: <span className="text-2xl">📞</span>,
+    href: "/services/ip-telephony",
+  },
+  {
+    title: "Sécurité Réseau & Cybersécurité",
+    description:
+      "Protection avancée contre les cybermenaces avec pare-feu, antivirus et surveillance en temps réel.",
+    icon: <span className="text-2xl">🛡️</span>,
+    href: "/services/network-security",
+  },
+  {
+    title: "Développement Web et Mobile",
+    description:
+      "Création et développement de sites web et applications mobiles modernes, performants et optimisés.",
     icon: <span className="text-2xl">💻</span>,
-  },
-  {
-    title: "Développement de sites web",
-    description:
-      "Création de sites web modernes, réactifs et optimisés pour tous les appareils.",
-    icon: <span className="text-2xl">🌍</span>,
-  },
-  {
-    title: "Développement d'applications mobiles",
-    description:
-      "Conception et développement d'applications mobiles innovantes pour iOS et Android.",
-    icon: <span className="text-2xl">📱</span>,
+    href: "/services/web-mobile-development",
   },
 ];
 
@@ -139,96 +137,6 @@ const Services = () => {
             Comment Peut-On <span className="text-abricot">Vous Aider</span>?
           </h2>
         </div>
-        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-xl font-semibold text-black mb-6 sm:mb-[60px] sm:mt-[30px]">
-              Services IT
-            </h3>
-            <div className="relative flex bg-white w-full">
-              <div className="w-full h-[2px] bg-[rgba(18,24,32,0.1)] relative before:content-[''] before:w-[25px] before:border-r-[5px] before:border-r-[#FFFFFF] before:absolute before:h-full before:left-0 before:top-0 before:bg-abricot"></div>
-            </div>
-            <ServiceCard
-              number="01"
-              title="Développement de Logiciels"
-              description="Conceptions et développements des solutions logicielles sur mesure pour répondre aux besoins spécifiques de votre entreprise."
-              icon={
-                <span className="w-full text-[48px] rounded-full flex items-center justify-center">
-                  💻
-                </span>
-              }
-            />
-            <div className="relative flex bg-white w-full">
-              <div className="w-full h-[2px] bg-[rgba(18,24,32,0.1)] relative before:content-[''] before:w-[25px] before:border-r-[5px] before:border-r-[#FFFFFF] before:absolute before:h-full before:left-0 before:top-0 before:bg-abricot"></div>
-            </div>
-            <ServiceCard
-              number="02"
-              title="Maintenance Informatique"
-              description="Assurez le bon fonctionnement de votre infrastructure IT grâce à nos services de maintenance préventive et curative."
-              icon={
-                <span className="w-full text-[48px] rounded-full flex items-center justify-center">
-                  🔧
-                </span>
-              }
-            />
-            <div className="relative flex bg-white w-full">
-              <div className="w-full h-[2px] bg-[rgba(18,24,32,0.1)] relative before:content-[''] before:w-[25px] before:border-r-[5px] before:border-r-[#FFFFFF] before:absolute before:h-full before:left-0 before:top-0 before:bg-abricot"></div>
-            </div>
-            <ServiceCard
-              number="03"
-              title="Déploiement de Réseaux"
-              description="Installation et gestion de réseaux sécurisés et performants pour garantir la connectivité de votre entreprise."
-              icon={
-                <span className="w-full text-[48px] rounded-full flex items-center justify-center">
-                  🌐
-                </span>
-              }
-            />
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-black mb-6 sm:mb-[60px] sm:mt-[30px]">
-              Services de Sécurité
-            </h3>
-            <div className="relative flex bg-white w-full">
-              <div className="w-full h-[2px] bg-[rgba(18,24,32,0.1)] relative before:content-[''] before:w-[25px] before:border-r-[5px] before:border-r-[#FFFFFF] before:absolute before:h-full before:left-0 before:top-0 before:bg-abricot"></div>
-            </div>
-            <ServiceCard
-              number="04"
-              title="Systèmes de Vidéosurveillance"
-              description="Protégez vos locaux avec des caméras de surveillance intelligentes pour une sécurité optimale."
-              icon={
-                <span className="w-full text-[48px] rounded-full flex items-center justify-center">
-                  📹
-                </span>
-              }
-            />
-            <div className="relative flex bg-white w-full">
-              <div className="w-full h-[2px] bg-[rgba(18,24,32,0.1)] relative before:content-[''] before:w-[25px] before:border-r-[5px] before:border-r-[#FFFFFF] before:absolute before:h-full before:left-0 before:top-0 before:bg-abricot"></div>
-            </div>
-            <ServiceCard
-              number="05"
-              title="Contrôle d'Accès"
-              description="Gérez les autorisations d'accès à vos locaux avec des solutions modernes de contrôle d'accès."
-              icon={
-                <span className="w-full text-[48px] rounded-full flex items-center justify-center">
-                  🔒
-                </span>
-              }
-            />
-            <div className="relative flex bg-white w-full">
-              <div className="w-full h-[2px] bg-[rgba(18,24,32,0.1)] relative before:content-[''] before:w-[25px] before:border-r-[5px] before:border-r-[#FFFFFF] before:absolute before:h-full before:left-0 before:top-0 before:bg-abricot"></div>
-            </div>
-            <ServiceCard
-              number="06"
-              title="Consultation en Cybersécurité"
-              description="Protégez vos données et réseaux avec nos services de consultation en cybersécurité."
-              icon={
-                <span className="w-full text-[48px] rounded-full flex items-center justify-center">
-                  🔐
-                </span>
-              }
-            />
-          </div>
-        </div> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ServiceCard
@@ -237,7 +145,7 @@ const Services = () => {
               title={service.title}
               description={service.description}
               icon={service.icon}
-              link="#"
+              href={service.href}
             />
           ))}
         </div>

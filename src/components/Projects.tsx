@@ -3,56 +3,14 @@
 "use client";
 
 import React, { useState } from "react";
-import Image1 from "@/assets/images/lb2s_1.jpg";
 import { ArrowRight, SquareArrowLeft, SquareArrowRight } from "lucide-react";
 import Link from "next/link";
-
-type Project = {
-  id: number;
-  title: string;
-  description: string;
-  author: string;
-  imgSrc: string;
-};
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "Easy & Most Powerful Server Platform.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    author: "Nguta Ithya",
-    imgSrc: "https://via.placeholder.com/300x200/000000/FFFFFF?text=Project+1",
-  },
-  {
-    id: 2,
-    title: "Another Powerful Project.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    author: "John Doe",
-    imgSrc: "https://via.placeholder.com/300x200/000000/FFFFFF?text=Project+2",
-  },
-  {
-    id: 3,
-    title: "Easy & Most Powerful Server Platform.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    author: "Nguta Ithya",
-    imgSrc: Image1.src,
-  },
-  {
-    id: 4,
-    title: "Advanced Cloud Solutions",
-    author: "Jane Smith",
-    imgSrc: Image1.src,
-    description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  },
-];
+import { caseStudies } from "@/lib/constants";
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const projects = caseStudies.slice(0, 4);
   const projectLength = projects.length;
 
   // Increment by 2 since we are showing two projects at once
@@ -125,7 +83,7 @@ const Projects = () => {
               <div key={project.id} className="w-1/2" style={{ width: "50%" }}>
                 <div className="flex flex-row items-start justify-center relative rounded-lg group overflow-hidden cursor-pointer">
                   <img
-                    src={project.imgSrc}
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-64 filter grayscale group-hover:grayscale-0 object-cover rounded-lg group-hover:scale-125 transition-all duration-500"
                   />
@@ -134,7 +92,7 @@ const Projects = () => {
                   <h3 className="text-2xl font-bold mb-2 text-[#121820]">
                     {project.title}
                   </h3>
-                  <p className="text-abricot mb-2">by: {project.author}</p>
+                  <p className="text-abricot mb-2">by: {project.client}</p>
                   <p className="text-gray-500">{project.description}</p>
                 </div>
               </div>
@@ -144,7 +102,7 @@ const Projects = () => {
         <div className="flex flex-wrap">
           <div className="w-1/2 flex justify-start items-center">
             <Link
-              href="/projects"
+              href="/case-studies"
               className="custom-syne group text-[16px] leading-4 text-[#121820] font-semibold whitespace-nowrap inline-flex items-center decoration-0"
             >
               <span className="capitalize">Voir tous les projects</span>

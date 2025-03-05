@@ -1,5 +1,4 @@
-import { Wrench, Flag, Rocket, Scale, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Wrench, Flag, Rocket, Scale } from "lucide-react";
 
 const cardData = [
   {
@@ -62,7 +61,7 @@ const Collaboration = () => {
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-wrap">
+        {/* <div className="flex flex-wrap">
           <div className="w-1/2 flex justify-start items-center">
             <Link
               href="/projects"
@@ -82,7 +81,7 @@ const Collaboration = () => {
               Carrières
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

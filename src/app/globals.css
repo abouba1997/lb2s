@@ -199,3 +199,35 @@ body {
   opacity: 1;
   transform: translateY(20px);
 }
+
+/* Project card hover effects */
+.float-animation:hover {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Collaboration card hover effects */
+.collaboration-card {
+  transition: all 0.3s ease;
+}
+
+.collaboration-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.collaboration-card:hover .icon-container {
+  background-color: #e9806e;
+  color: white;
+}
+
+/* Pagination dots animation */
+.pagination-dot {
+  transition: all 0.3s ease;
+}
+
+.pagination-dot.active {
+  width: 24px;
+  background-color: #e9806e;
+}
